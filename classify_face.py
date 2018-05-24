@@ -174,7 +174,7 @@ model_path = "model_fujikubo.npz"  # 保存するモデルのパス
 in_size = 64  # 画像サイズ
 epoch = 30
 batch_size = 20
-TRAIN = True
+TRAIN = False
 
 if __name__ == '__main__':
     if TRAIN:
@@ -185,4 +185,4 @@ if __name__ == '__main__':
         model_ = CNN(dropout=0.5)
         chainer.serializers.load_npz(model_path, model_)
         while True:
-            predict(input("INPUT>>"), model_)
+            predict(input("INPUT PICTURE FILE PATH>>"), model_)
